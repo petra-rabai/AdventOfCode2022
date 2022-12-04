@@ -60,7 +60,13 @@ namespace AdventOfCode2022
 		private int SeekTopTreeCaloriesAndSumIt(int[] calories)
 		{
 			int sum = 0;
-			calories.OrderByDescending(num => num, new SpecialComparer());
+			int[] sortedCalories = calories.OrderByDescending(x => x).ToArray();
+			
+			for (int i = 0; i < 3; i++)
+			{
+				sum += sortedCalories[i];
+			}
+
 			return sum;
 		}
 
